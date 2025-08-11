@@ -1,50 +1,57 @@
-# Çalışan Yönetimi API'si (Spring Boot Backend)
+# Employee Management API (Spring Boot Backend)
 
-Bu proje, bir çalışan yönetim sistemi için geliştirilmiş bir RESTful API'dir. Veri tabanı işlemleri için Spring Boot, Spring Data JPA ve PostgreSQL kullanır.
+This project is a RESTful API developed for an employee management system. It uses Spring Boot, Spring Data JPA, and PostgreSQL for database operations.
 
-## Özellikler
+## Features
 
-- **CRUD İşlemleri:** Çalışanlar için oluşturma (Create), okuma (Read), güncelleme (Update) ve silme (Delete) işlemleri.
-- **RESTful End-point'ler:** HTTP metotları (`GET`, `POST`, `PUT`, `DELETE`) kullanılarak erişilebilen API uç noktaları.
-- **CORS Desteği:** Ön yüz uygulamalarıyla sorunsuz iletişim kurabilmek için CORS ayarları yapılandırılmıştır.
+- **CRUD Operations:** Supports Create, Read, Update, and Delete operations for employee data.
+- **RESTful Endpoints:** Accessible API endpoints using HTTP methods (`GET`, `POST`, `PUT`, `DELETE`).
+- **CORS Support:** Configured CORS settings to enable seamless communication with a frontend application.
 
-## Teknolojiler
+## Technologies
 
 - **Backend:** Spring Boot, Java
-- **Veri Tabanı:** PostgreSQL
+- **Database:** PostgreSQL
 - **ORM:** Spring Data JPA, Hibernate
-- **Build Aracı:** Maven
+- **Build Tool:** Maven
 
-## Gereksinimler
+## Prerequisites
 
-- Java 17 veya üzeri
+- Java 17 or higher
 - Maven
-- Docker (PostgreSQL veri tabanı için)
+- Docker (for PostgreSQL database)
 
-## Başlangıç
+## Getting Started
 
-1.  **Projeyi Klonla:**
+Follow the steps below to run the project on your local machine:
+
+1.  **Clone the Project:**
+    - Open your terminal and run the following commands to clone the project repository:
     ```bash
-    git clone [https://github.com/SENIN_GITHUB_ADIN/calisan-yonetim-web.git](https://github.com/SENIN_GITHUB_ADIN/calisan-yonetim-web.git)
+    git clone [https://github.com/YOUR_GITHUB_USERNAME/calisan-yonetim-web.git](https://github.com/YOUR_GITHUB_USERNAME/calisan-yonetim-web.git)
     cd calisan-yonetim-web
     ```
 
-2.  **Veri Tabanını Başlat:** Docker kullanarak PostgreSQL veri tabanını başlatın.
+2.  **Start the Database:**
+    - Make sure Docker is running.
+    - Start the PostgreSQL database container by running the following command in your terminal:
     ```bash
     docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
     ```
 
-3.  **Uygulamayı Çalıştır:** Maven ile Spring Boot uygulamasını başlatın.
+3.  **Run the Application:**
+    - Navigate to the project's main directory.
+    - Run the Spring Boot application using Maven:
     ```bash
     mvn spring-boot:run
     ```
-    Uygulama, `http://localhost:8080` adresinde çalışmaya başlayacaktır.
+    The application will start running at `http://localhost:8080`.
 
-## API Uç Noktaları
+## API Endpoints
 
-| HTTP Metodu | URL | Açıklama |
+| HTTP Method | URL | Description |
 | :--- | :--- | :--- |
-| `GET` | `/api/employees` | Tüm çalışanları listeler. |
-| `POST` | `/api/employees` | Yeni bir çalışan ekler. |
-| `PUT` | `/api/employees/{id}` | Belirli bir ID'ye sahip çalışanı günceller. |
-| `DELETE` | `/api/employees/{id}` | Belirli bir ID'ye sahip çalışanı siler. |
+| `GET` | `/api/employees` | Lists all employees. |
+| `POST` | `/api/employees` | Adds a new employee. |
+| `PUT` | `/api/employees/{id}` | Updates an employee with a specific ID. |
+| `DELETE`| `/api/employees/{id}` | Deletes an employee with a specific ID. |
